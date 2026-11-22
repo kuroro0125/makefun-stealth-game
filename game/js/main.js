@@ -2,7 +2,7 @@
 // Modes: title -> playing -> spotted (grace) -> caught | won. The scene mode
 // freezes a posed moment for screenshots and never advances the simulation.
 
-import { WORLD_W, WORLD_H, SPAWN, PATROLS } from './level.js';
+import { WORLD_W, WORLD_H, SPAWN, PATROLS, CASES } from './level.js';
 import { makeGuard, updateGuard, sightRange, alertGuard, raiseSuspicion, GUARD_STATES } from './guards.js';
 import { makePlayer, updatePlayer, currentNoise, updatePicking, lootCount, allLootTaken, atExit, caseInReach } from './player.js';
 import { canSeePlayer } from './vision.js';
@@ -108,13 +108,11 @@ function resetGame() {
   game.elapsed = 0;
   game.mode = 'playing';
   hideOverlay();
-  // Cases reset: level.js holds them as module state.
-  import('./level.js').then((m) => {
-    for (const c of m.CASES) {
-      c.taken = false;
-      c.progress = 0;
-    }
-  });
+  // Cases reset: level.js holds them as module state, shared with the player.
+  for (const c of CASES) {
+    c.taken = false;
+    c.progress = 0;
+  }
 }
 
 function winGame() {
