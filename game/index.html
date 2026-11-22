@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NIGHT ARCHIVE — 夜のアーカイブ</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="wrap">
+  <header id="hud">
+    <div id="hud-title">NIGHT ARCHIVE <span>夜のアーカイブ</span></div>
+    <div id="hud-loot">星図 0/3　アストロラーベ —　戦利品 0/4</div>
+    <div id="hud-meter-wrap">
+      <span id="hud-meter-label">検知</span>
+      <div id="hud-meter"><div id="hud-meter-fill"></div></div>
+      <span id="hud-state">未発見</span>
+      <span id="hud-time">0:00</span>
+    </div>
+    <div id="hud-hint">WASD移動 ／ Shift忍び足 ／ E長押しで開錠 ／ 影に隠れろ</div>
+  </header>
+  <div id="stage">
+    <canvas id="game" width="960" height="640"></canvas>
+    <div id="overlay">
+      <h1 id="overlay-title"></h1>
+      <p id="overlay-body"></p>
+      <button id="overlay-button" type="button"></button>
+    </div>
+  </div>
+  <footer>
+    星図3枚と黄金のアストロラーベを盗み、見つからずに北の出口へ。音と光が、見つかるか見つからないかを分ける。
+  </footer>
+</div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
