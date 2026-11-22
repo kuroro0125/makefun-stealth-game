@@ -1,0 +1,33 @@
+/* NIGHT ARCHIVE — night blues, warm lamplight, and a HUD you can read at a glance. */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #0b0e1a; color: #e8e4d8;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif; }
+#wrap { width: 1000px; margin: 0 auto; padding: 12px 20px 20px; }
+#hud { background: #141829; border: 1px solid #2c3454; border-radius: 8px;
+  padding: 10px 14px; margin-bottom: 10px; }
+#hud-title { font-size: 20px; letter-spacing: 4px; color: #ffd66e; font-weight: bold; }
+#hud-title span { font-size: 13px; letter-spacing: 2px; color: #9fb4d8; }
+#hud-loot { font-size: 14px; margin-top: 4px; color: #d8d2c0; }
+#hud-meter-wrap { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+#hud-meter-label { font-size: 12px; color: #9fb4d8; }
+#hud-meter { flex: 1; height: 12px; background: #232a44; border-radius: 6px; overflow: hidden; }
+#hud-meter-fill { height: 100%; width: 0%; background: #ffd66e; transition: width 0.12s linear; }
+#hud-meter.hot #hud-meter-fill { background: #ff4030; }
+#hud-state { font-size: 13px; min-width: 150px; color: #9fd8a8; }
+#hud-state.warn { color: #ffb030; }
+#hud-state.alert { color: #ff4030; font-weight: bold; }
+#hud-time { font-size: 14px; color: #d8d2c0; min-width: 44px; text-align: right; }
+#hud-hint { font-size: 12px; color: #8a94b8; margin-top: 6px; }
+#stage { position: relative; width: 960px; height: 640px; }
+#game { display: block; width: 960px; height: 640px; background: #241a12;
+  border: 1px solid #2c3454; border-radius: 4px; }
+#overlay { position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center;
+  background: rgba(8, 10, 22, 0.82); border-radius: 4px; padding: 30px; }
+#overlay.hidden { display: none; }
+#overlay h1 { color: #ffd66e; font-size: 30px; letter-spacing: 3px; margin: 0 0 14px; }
+#overlay p { font-size: 15px; line-height: 1.9; color: #e8e4d8; margin: 0 0 22px; max-width: 640px; }
+#overlay button { font-size: 17px; padding: 12px 34px; border-radius: 6px;
+  border: 1px solid #ffd66e; background: #2c2410; color: #ffd66e; cursor: pointer; }
+#overlay button:hover { background: #4a3a18; }
+footer { margin-top: 10px; font-size: 12px; color: #6a7494; text-align: center; }
